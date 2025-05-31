@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://lh1wpirq0rm"]
+
+[ext_resource type="FontFile" uid="uid://cyvm6y6td3245" path="res://assets/VT323-Regular.ttf" id="1_xsmvr"]
+
+[resource]
+default_font = ExtResource("1_xsmvr")
+default_font_size = 40

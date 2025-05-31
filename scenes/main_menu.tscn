@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://rhdm4ypjbutp"]
+
+[ext_resource type="Script" uid="uid://46eu0w8kj73i" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Theme" uid="uid://lh1wpirq0rm" path="res://assets/main_menu.tres" id="1_wu84c"]
+[ext_resource type="FontFile" uid="uid://cyvm6y6td3245" path="res://assets/VT323-Regular.ttf" id="4_13x04"]
+[ext_resource type="PackedScene" uid="uid://dt552qhq7f86k" path="res://scenes/high_score_container.tscn" id="5_8ln24"]
+[ext_resource type="PackedScene" uid="uid://cn43w3bmxvb5a" path="res://scenes/parallax.tscn" id="5_mwffk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jnhix"]
+font = ExtResource("4_13x04")
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+font = ExtResource("4_13x04")
+font_size = 90
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 760.0
+offset_top = 140.0
+offset_right = 1160.0
+offset_bottom = 940.0
+theme = ExtResource("1_wu84c")
+script = ExtResource("1_8ln24")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 20.0
+scale = Vector2(40, 40)
+color = Color(0, 0, 0, 0.784314)
+
+[node name="ScoreNotification" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 460.0
+offset_top = 720.0
+offset_right = 660.0
+offset_bottom = 800.0
+text = "TETRIS
+"
+label_settings = SubResource("LabelSettings_jnhix")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Parallax" parent="." instance=ExtResource("5_mwffk")]
+process_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wu84c")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Tetris" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "TETRIS"
+label_settings = SubResource("LabelSettings_wu84c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "PLAY"
+
+[node name="LevelButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "LEVEL: 1"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[node name="HighScoreContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("5_8ln24")]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/LevelButton" to="." method="_on_level_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

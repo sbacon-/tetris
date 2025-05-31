@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt552qhq7f86k"]
+
+[ext_resource type="Theme" uid="uid://lh1wpirq0rm" path="res://assets/main_menu.tres" id="1_8t44e"]
+[ext_resource type="Script" uid="uid://1jr6mwr4ltop" path="res://scripts/high_score_container.gd" id="2_nhj25"]
+[ext_resource type="FontFile" uid="uid://cyvm6y6td3245" path="res://assets/VT323-Regular.ttf" id="2_qar8k"]
+[ext_resource type="LabelSettings" uid="uid://cb6hi1lqlgk21" path="res://assets/label_settings.tres" id="3_nhj25"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
+font = ExtResource("2_qar8k")
+font_size = 64
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HighScoreContainer" type="MarginContainer"]
+size_flags_vertical = 10
+theme = ExtResource("1_8t44e")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+script = ExtResource("2_nhj25")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HighScores" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "HIGHSCORES"
+label_settings = SubResource("LabelSettings_8ln24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HS" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Name1" type="Label" parent="VBoxContainer/HS"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = ExtResource("3_nhj25")
+
+[node name="Score1" type="Label" parent="VBoxContainer/HS"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00"
+label_settings = ExtResource("3_nhj25")
+horizontal_alignment = 2
+
+[node name="HS2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Name2" type="Label" parent="VBoxContainer/HS2"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = ExtResource("3_nhj25")
+
+[node name="Score2" type="Label" parent="VBoxContainer/HS2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00"
+label_settings = ExtResource("3_nhj25")
+horizontal_alignment = 2
+
+[node name="HS3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Name3" type="Label" parent="VBoxContainer/HS3"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = ExtResource("3_nhj25")
+
+[node name="Score3" type="Label" parent="VBoxContainer/HS3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00"
+label_settings = ExtResource("3_nhj25")
+horizontal_alignment = 2
+
+[node name="HS4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Name4" type="Label" parent="VBoxContainer/HS4"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = ExtResource("3_nhj25")
+
+[node name="Score4" type="Label" parent="VBoxContainer/HS4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00"
+label_settings = ExtResource("3_nhj25")
+horizontal_alignment = 2
+
+[node name="HS5" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Name5" type="Label" parent="VBoxContainer/HS5"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = ExtResource("3_nhj25")
+
+[node name="Score5" type="Label" parent="VBoxContainer/HS5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00"
+label_settings = ExtResource("3_nhj25")
+horizontal_alignment = 2

@@ -1,0 +1,64 @@
+[gd_scene load_steps=16 format=3 uid="uid://dm7f1thct0m00"]
+
+[ext_resource type="Script" uid="uid://bp2n7f2ifat2v" path="res://scripts/audio_stream_manager.gd" id="1_lqsoi"]
+[ext_resource type="AudioStream" uid="uid://u6w5i60wrow6" path="res://assets/sfx/double.ogg" id="2_tavb6"]
+[ext_resource type="AudioStream" uid="uid://c3jxnuue6bbas" path="res://assets/sfx/gameover.ogg" id="3_mdpos"]
+[ext_resource type="AudioStream" uid="uid://dnah5q4x13sv7" path="res://assets/sfx/harddrop.ogg" id="4_065r6"]
+[ext_resource type="AudioStream" uid="uid://b55jos78vodhm" path="res://assets/sfx/hold.ogg" id="5_meblk"]
+[ext_resource type="AudioStream" uid="uid://cruxgh7bb5vty" path="res://assets/sfx/lockdown.ogg" id="6_dhlwn"]
+[ext_resource type="AudioStream" uid="uid://dgtllblf576yj" path="res://assets/sfx/levelup.ogg" id="6_tavb6"]
+[ext_resource type="AudioStream" uid="uid://cwhqixp0f0cx4" path="res://assets/sfx/move.ogg" id="7_yool1"]
+[ext_resource type="AudioStream" uid="uid://cq5747f35u0jy" path="res://assets/sfx/rotate.ogg" id="8_ayuj8"]
+[ext_resource type="AudioStream" uid="uid://mjadlan2lay" path="res://assets/sfx/single.ogg" id="9_4ci2i"]
+[ext_resource type="AudioStream" uid="uid://crxfr7njby1ee" path="res://assets/sfx/softdrop.ogg" id="10_357is"]
+[ext_resource type="AudioStream" uid="uid://j60nhdkqo2aq" path="res://assets/sfx/tetris.ogg" id="11_1rg80"]
+[ext_resource type="AudioStream" uid="uid://cpf8416mp5kx" path="res://assets/sfx/triple.ogg" id="12_vcl78"]
+[ext_resource type="AudioStream" uid="uid://p7e4eutqjx6b" path="res://assets/sfx/main_theme.ogg" id="13_dhuaw"]
+[ext_resource type="AudioStream" uid="uid://cwwyvncdfagdt" path="res://assets/sfx/menu.ogg" id="15_mdpos"]
+
+[node name="AudioStreamManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_lqsoi")
+
+[node name="double" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tavb6")
+
+[node name="gameover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mdpos")
+
+[node name="harddrop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_065r6")
+
+[node name="hold" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_meblk")
+
+[node name="levelup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tavb6")
+
+[node name="lockdown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dhlwn")
+
+[node name="move" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_yool1")
+
+[node name="rotate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ayuj8")
+
+[node name="single" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_4ci2i")
+
+[node name="softdrop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_357is")
+
+[node name="tetris" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_1rg80")
+
+[node name="triple" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_vcl78")
+
+[node name="maintheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_dhuaw")
+
+[node name="menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_mdpos")
+autoplay = true
